@@ -32,22 +32,10 @@ class TweetRepository{
         }
     }
 
-    async update(id,data){
-        try{
-            const tweet=Tweet.findByIdAndUpdate(id,data,{new:true});
-            //* findByIdAndUpdate returns the old document only instead of new updated document
-            //* in order to get the new updated document in return you use {new:true}
-            return tweet;
-        }
-        catch(err){
-            console.log(err);
-        }
-    }
-
     async destroy(id){
         try{
-            const tweet=Tweet.findByIdAndRemove(id);
-            return tweet;
+            const response=Tweet.findByIdAndRemove(id);
+            return response;
         }
         catch(err){
             console.log(err);
