@@ -6,8 +6,8 @@ class TweetRepository{
             const tweet= await Tweet.create(data);
             return tweet;
         }
-        catch(err){
-            console.log(err);
+        catch(error){
+            throw error;
         }
     }
 
