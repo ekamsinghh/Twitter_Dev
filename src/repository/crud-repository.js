@@ -15,12 +15,12 @@ class CrudRepository{
 
     async destroy(id){
         try{
-            const result = await this.model.findByIdAndRemove(id);
+            const result = await this.model.findByIdAndDelete(id);
             return result;
         }
         catch(error){
             console.log("Some error happened in repository");
-            throw {err};
+            throw error;
         }
     }
 
