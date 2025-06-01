@@ -41,6 +41,8 @@ class LikeService {
             return isRemoved;
         }
         catch (error) {
+            console.log("Error in like service: ")
+            console.log(error);
             throw error;
         }
 
