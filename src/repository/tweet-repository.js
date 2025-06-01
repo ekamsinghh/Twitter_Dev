@@ -17,13 +17,19 @@ class TweetRepository extends CrudRepository{
 
     async getWithComments(id){
         try{
-            const tweet=Tweet.findById(id).populate('comment').lean();
+            const tweet=Tweet.findById(id).populate({
+                path:'comments',
+                populate:{
+                    path:'comments',
+                }//* this will get the comments of a comment
+            }).lean();
             //* populate will get the comments of a tweet since you already added the refrence of comment model
             //* lean is used to get the document in json format because initially we get the object in mongoose object format
             return tweet;
         }
         catch(err){
             console.log(err);
+            throw err;
         }
     }
    
