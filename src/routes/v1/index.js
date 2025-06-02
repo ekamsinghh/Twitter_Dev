@@ -16,9 +16,9 @@ router.post('/signup', signUp);
 router.post('/login',login)
 
 //* Likes
-router.post('/likes/toggle', toggleLike);
+router.post('/likes/toggle',authenticate, toggleLike);
 
 //* Comments
-router.post('/comments', createComment);
+router.post('/comments', authenticate, createComment);
 
 export default router;
