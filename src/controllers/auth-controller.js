@@ -26,3 +26,24 @@ export const signUp= async (req , res)=>{
         });
     }
 }
+
+export const login = async (req , res ) => {
+    try{
+        const token = await userService.login(req.body);
+        return res.status(200).json({
+            message: "User logged in successfully",
+            data: token,
+            success: true,
+            error: {}
+        });
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).json({
+            message: "Something went wrong in login",
+            data: {},
+            success: false,
+            error: error
+        })
+    }
+}
