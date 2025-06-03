@@ -27,4 +27,5 @@
 
 - Every tweet might be having a hashtag
 
-// https://how-to.dev/how-to-set-up-jest-for-es-module
+- For setting up testing using JEST:
+    - // https://how-to.dev/how-to-set-up-jest-for-es-module
